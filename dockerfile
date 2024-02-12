@@ -6,4 +6,6 @@ ENV REPLICATE_API_TOKEN=""
 COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
-ENTRYPOINT ["python", "generate_image.py", "--prompt"]
+# Port used by the Streamlit App
+EXPOSE 8501
+CMD ["streamlit", "run", "app.py"]

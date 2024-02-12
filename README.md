@@ -29,9 +29,19 @@ For usage details:
 python generate_image.py --help
 ```
 
-### With Docker
+### Streamlit App
 
-#### Build the Docker Image
+This project includes a Streamlit app for an interactive image generation experience.
+
+To run the Streamlit app, navigate to the project directory and execute the following command:
+
+```bash
+streamlit run app.py
+```
+
+#### With Docker
+
+##### Build the Docker Image
 
 To build the Docker image for running the script, navigate to the project directory and run:
 
@@ -39,14 +49,14 @@ To build the Docker image for running the script, navigate to the project direct
 docker build -t pixelcraft:latest .
 ```
 
-#### Run with Docker
+##### Run with Docker
 
 After building the Docker image, you can run the script inside a Docker container and pass a prompt directly using the `docker run` command.
 
 For example:
 
 ```bash
-docker run -e REPLICATE_API_TOKEN=<your_api_token_here> pixelcraft:latest "An astronaut riding a rainbow unicorn"
+docker run -p 8501:8501 -e REPLICATE_API_TOKEN=<your_api_token_here> pixelcraft:latest
 ```
 
 ## Development
