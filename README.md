@@ -132,6 +132,10 @@ This process of continuous feedback and modification allows for the fine-tuning 
 This high quality dataset, derived from previous iterations of image generation and human validations, will help to produce better images with improved
 content consistency results.
 
+### Simplify user experience
+
+Making the prompt optional and generating it from the input image will improve the user's experience and increase its adoption.
+
 ### Allow to upload a file from the local machine
 
 Incorporating AWS S3 alongside with presigned URLs (or similar strategies in other cloud providers) for storing and utilizing local files instead of relying on public image URLs.
