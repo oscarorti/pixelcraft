@@ -1,6 +1,7 @@
 import pytest
 from unittest.mock import patch
 from models import sdxl
+from prompts import style
 import error
 
 
@@ -60,3 +61,30 @@ def test_generate_with_invalid_image_url_raises_NotValidURL_error():
     invalid_image_url = "not a valid url"
     with pytest.raises(error.NotValidURL):
         sdxl.generate(prompt, image=invalid_image_url)
+
+
+def test_generate_with_style_filter(mock_replicate_run):
+    prompt = "Test prompt"
+    style_filter = style.StyleFilter.VINTAGE
+    expected_prompt = f"{prompt}. {style_filter.value}"
+
+    sdxl.generate(prompt, style_filter=style_filter)
+
+    mock_replicate_run.assert_called_once_with(
+        "stability-ai/sdxl:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b",
+        input={"prompt": expected_prompt},
+    )
+
+
+def test_generate_with_style_filter_and_image(mock_replicate_run):
+    prompt = "Test prompt"
+    image_url = "http://example.com/fake-image.png"
+    style_filter = style.StyleFilter.CARTOON
+    expected_prompt = f"{prompt}. {style_filter.value}"
+
+    sdxl.generate(prompt, image=image_url, style_filter=style_filter)
+
+    mock_replicate_run.assert_called_once_with(
+        "stability-ai/sdxl:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b",
+        input={"prompt": expected_prompt, "image": image_url},
+    )

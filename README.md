@@ -28,7 +28,15 @@ Generate custom images from a prompt and a reference image with:
 ```bash
 python generate_image.py \
   --prompt "An astronaut riding a rainbow cat" \
-  --image "https://replicate.delivery/pbxt/O8vvaeb5GJ3wYacIM7SnUcB6Uj48GEc9jcGN65KJAeHWF6VSA/out-0.png"
+  --image "https://pbxt.replicate.delivery/YXbcLudoHBIYHV6L0HbcTx5iRzLFMwygLr3vhGpZI35caXbE/out-0.png"
+```
+
+Generate custom images from a prompt, a reference image, and a style filter with:
+```bash
+python generate_image.py \
+  --prompt "Monna Lisa" \
+  --image "https://media.npr.org/assets/img/2012/02/02/mona-lisa_custom-31a0453b88a2ebcb12c652bce5a1e9c35730a132-s1100-c50.jpg" \
+  --filter "CARTOON"
 ```
 
 For usage details:

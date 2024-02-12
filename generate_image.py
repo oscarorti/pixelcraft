@@ -1,6 +1,7 @@
 import argparse
 
 from models import sdxl
+from prompts import style
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
@@ -21,7 +22,24 @@ if __name__ == "__main__":
         default=None,
         help="Reference image for generating the image. Example usage: --image 'https://replicate.delivery/pbxt/O8vvaeb5GJ3wYacIM7SnUcB6Uj48GEc9jcGN65KJAeHWF6VSA/out-0.png'",
     )
+    parser.add_argument(
+        "-f",
+        "--filter",
+        type=str,
+        required=False,
+        default=None,
+        choices=[f.name for f in style.StyleFilter],
+        help="Choose a style filter for the image. This option requires and input image.",
+    )
     args = parser.parse_args()
 
-    url = sdxl.generate(args.prompt, args.image)
+    if args.filter:
+        chosen_filter = style.StyleFilter[args.filter]
+        if not args.image:
+            raise ValueError("Image required if filter is selected")
+    else:
+        chosen_filter = None
+
+    url = sdxl.generate(args.prompt, args.image, chosen_filter)
+
     print(url)

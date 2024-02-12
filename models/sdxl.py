@@ -3,15 +3,24 @@ import validators
 
 import error
 
+from prompts import style
 
-def generate(prompt: str, image: str = None) -> str:
+
+def generate(
+    prompt: str, image: str = None, style_filter: style.StyleFilter = None
+) -> str:
     model = "stability-ai/sdxl:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b"
+
+    if style_filter:
+        prompt = f"{prompt}. {style_filter.value}"
     input_ = {"prompt": prompt}
+
     if image:
         is_valid = validators.url(image)
         if not is_valid:
             raise error.NotValidURL()
         input_.update({"image": image})
+
     try:
         output = replicate.run(model, input=input_)
         url = output[0]
