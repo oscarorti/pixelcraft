@@ -3,8 +3,8 @@ from enum import Enum
 
 class StyleFilter(Enum):
     NONE = ""
-    VINTAGE = "Image with a vintage style"
-    CARTOON = "Image with a cartoon style"
-    OIL_PAINT = "Image with an oil paint effect"
-    CYBERPUNK = "Image in a cyberpunk look"
-    WATERCOLOR = "Image with a watercolor effect"
+    VINTAGE = "evoking the charm and nostalgia of the early 20th century"
+    CARTOON = "rendered in a vibrant and exaggerated cartoon style"
+    OIL_PAINT = "mirroring the rich textures and depth of an oil painting"
+    CYBERPUNK = "capturing the neon-drenched, futuristic essence of cyberpunk"
+    WATERCOLOR = "with the delicate and translucent qualities of watercolor"

@@ -66,7 +66,7 @@ def test_generate_with_invalid_image_url_raises_NotValidURL_error():
 def test_generate_with_style_filter(mock_replicate_run):
     prompt = "Test prompt"
     style_filter = style.StyleFilter.VINTAGE
-    expected_prompt = f"{prompt}. {style_filter.value}"
+    expected_prompt = f"{prompt}, {style_filter.value}."
 
     sdxl.generate(prompt, style_filter=style_filter)
 
@@ -80,7 +80,7 @@ def test_generate_with_style_filter_and_image(mock_replicate_run):
     prompt = "Test prompt"
     image_url = "http://example.com/fake-image.png"
     style_filter = style.StyleFilter.CARTOON
-    expected_prompt = f"{prompt}. {style_filter.value}"
+    expected_prompt = f"{prompt}, {style_filter.value}."
 
     sdxl.generate(prompt, image=image_url, style_filter=style_filter)
 

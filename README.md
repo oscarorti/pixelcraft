@@ -96,6 +96,15 @@ Run unit tests to ensure reliability:
 pytest tests/unit
 ```
 
+## Prompt Engineering
+
+### SDXL (StableDiffusionXL)
+
+#### Resources
+- [The Ultimate Guide to Write Great Prompts for Stable Diffusion](https://docs.kanaries.net/articles/stable-diffusion-prompt-guide)
+- [Prompt Guide for Stable Diffusion XL (SDXL 1.0)](https://blog.segmind.com/prompt-guide-for-stable-diffusion-xl-crafting-textual-descriptions-for-image-generation/)
+- [106 styles for Stable Diffusion XL model](https://stable-diffusion-art.com/sdxl-styles/)
+
 ## Contributing
 
 Contributions are welcome! Please submit issues and pull requests via GitHub. Follow our coding standards and include tests with your PRs.
