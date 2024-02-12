@@ -95,6 +95,7 @@ Ensure code quality by setting up pre-commit hooks:
 Run unit tests to ensure reliability:
 
 ```bash
+export PYTHONPATH=`pwd`
 pytest tests/unit
 ```
 
