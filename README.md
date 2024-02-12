@@ -13,7 +13,9 @@ Pixelcraft is an AI-based image generation project that leverages advanced AI mo
 ```bash
 pip install -r requirements.txt
 ```
-3. Create an account on [Replicate](https://replicate.com) and get the access token from your personal settings
+3. Create an account on [Replicate](https://replicate.com) and get the access token from your personal settings.
+
+In [Replicate](https://replicate.com) there is a free tier, so you don't need to add billing information for demo purposes.
 
 ## Execution
 
@@ -104,6 +106,41 @@ pytest tests/unit
 - [The Ultimate Guide to Write Great Prompts for Stable Diffusion](https://docs.kanaries.net/articles/stable-diffusion-prompt-guide)
 - [Prompt Guide for Stable Diffusion XL (SDXL 1.0)](https://blog.segmind.com/prompt-guide-for-stable-diffusion-xl-crafting-textual-descriptions-for-image-generation/)
 - [106 styles for Stable Diffusion XL model](https://stable-diffusion-art.com/sdxl-styles/)
+
+## Future work
+
+### Enhancing Content Consistency in AI-Generated Images
+
+The following strategies, ordered by increasing complexity, could help to improve the content consistency when using the Stable Diffusion XL model:
+
+1. **Detailed Prompt Engineering for the Style Filters**: Refining prompt construction to include more specific details and employing advanced techniques
+can help to produce more precise outputs. The inclusion of vivid descriptions, emotional tones, and contextual specifics helps anchor the AI's creative
+process, reducing ambiguity and enhancing consistency.
+
+1. **Model Parameters Optimization**: Adjusting the configuration options available allows for a nuanced control over the generative process.
+Fine-tuning these parameters can influence the creativity-consistency balance, enabling the generation of images that are both innovative and
+aligned with user expectations.
+
+1. **Use of ControlNet to Condition the Image Generation Process**: Incorporating ControlNet, or similar conditioning mechanisms, into the image generation
+process enables the imposition of structural constraints on the output. By defining specific regions, shapes, or layouts, ControlNet guides the
+generation process to predetermined compositional frameworks enhancing the consistency on the generated images.
+
+1. **Human Feedback Loop**: Establishing an iterative refinement cycle, where initial outputs are analyzed and then used to improve the application.
+This process of continuous feedback and modification allows for the fine-tuning of both the prompt and model parameters, optimizing the output for consistency and relevance.
+
+1. **Custom Model Fine-tuning Using an Image Database from the Previous Step**: Custom fine-tuning of the Stable Diffusion XL model with a curated dataset.
+This high quality dataset, derived from previous iterations of image generation and human validations, will help to produce better images with improved
+content consistency results.
+
+### Allow to upload a file from the local machine
+
+Incorporating AWS S3 alongside with presigned URLs (or similar strategies in other cloud providers) for storing and utilizing local files instead of relying on public image URLs.
+
+### Integration with more providers and own infrastructure
+
+Adding integrations with MidJourney, Google Imagen, or an API in a private cloud with a custom model deployed would help to diversify the range of visual
+content generation capabilities available to users. This strategic expansion enables the leveraging of distinct strengths and stylistic details that each
+platform offers, and enriching the creative possibilities and output variety.
 
 ## Contributing
 
