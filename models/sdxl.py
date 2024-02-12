@@ -25,9 +25,12 @@ def generate(
 
     try:
         output = replicate.run(model, input=input_)
-        url = output[0]
-    except Exception as e:
-        raise Exception(e) from e
+    except replicate.exceptions.ModelError as e:
+        raise error.ImageGenerationError(e) from e
+    except ValueError as e:
+        raise error.ImageGenerationError(e) from e
+
+    url = output[0]
     return url
 
 
