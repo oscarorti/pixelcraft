@@ -13,10 +13,15 @@ Pixelcraft is an AI-based image generation project that leverages advanced AI mo
 ```bash
 pip install -r requirements.txt
 ```
+3. Create an account on [Replicate](https://replicate.com) and get the access token from your personal settings
 
 ## Execution
 
 ### CLI
+First of all, it is necessary to export the API token as environment variable:
+```bash
+export REPLICATE_API_TOKEN=<your_token_here>
+```
 
 Generate custom images from a prompt with:
 ```bash
