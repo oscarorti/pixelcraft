@@ -18,11 +18,18 @@ pip install -r requirements.txt
 
 ### CLI
 
-Generate custom images with:
+Generate custom images from a prompt with:
 ```bash
 python generate_image.py --prompt "An astronaut riding a rainbow unicorn"
 ```
 Explore various prompts to discover the project's versatility.
+
+Generate custom images from a prompt and a reference image with:
+```bash
+python generate_image.py \
+  --prompt "An astronaut riding a rainbow cat" \
+  --image "https://replicate.delivery/pbxt/O8vvaeb5GJ3wYacIM7SnUcB6Uj48GEc9jcGN65KJAeHWF6VSA/out-0.png"
+```
 
 For usage details:
 ```bash

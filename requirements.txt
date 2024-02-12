@@ -1,5 +1,6 @@
 replicate==0.23.1
 streamlit==1.31.0
+validators==0.22.0
 
 # Testing
 pytest
