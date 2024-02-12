@@ -29,6 +29,26 @@ For usage details:
 python generate_image.py --help
 ```
 
+### With Docker
+
+#### Build the Docker Image
+
+To build the Docker image for running the script, navigate to the project directory and run:
+
+```bash
+docker build -t pixelcraft:latest .
+```
+
+#### Run with Docker
+
+After building the Docker image, you can run the script inside a Docker container and pass a prompt directly using the `docker run` command.
+
+For example:
+
+```bash
+docker run -e REPLICATE_API_TOKEN=<your_api_token_here> pixelcraft:latest "An astronaut riding a rainbow unicorn"
+```
+
 ## Development
 
 ### Pre-commit Hooks
